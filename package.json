@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "@sap/cds": "^10"
+    "@sap/cds": "^10",
+    "git-commit-msg-linter": "^5.0.10"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^3"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "dev": "cds watch"
   },
   "private": true
 }
