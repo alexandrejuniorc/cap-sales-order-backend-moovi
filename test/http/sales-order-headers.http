@@ -1,0 +1,38 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### SalesOrderHeaders
+# @name SalesOrderHeaders_GET
+GET {{server}}/odata/v4/main/SalesOrderHeaders
+Authorization: Basic {{username}}:{{password}}
+
+
+### SalesOrderHeaders
+# @name SalesOrderHeaders_POST
+POST {{server}}/odata/v4/main/SalesOrderHeaders
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "id": "28912129-d311-4bfa-a2e8-f9ce510510ae"
+}
+
+
+### SalesOrderHeaders
+# @name SalesOrderHeaders_PATCH
+PATCH {{server}}/odata/v4/main/SalesOrderHeaders/28912129-d311-4bfa-a2e8-f9ce510510ae
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "id": "28912129-d311-4bfa-a2e8-f9ce510510ae"
+}
+
+
+### SalesOrderHeaders
+# @name SalesOrderHeaders_DELETE
+DELETE {{server}}/odata/v4/main/SalesOrderHeaders/28912129-d311-4bfa-a2e8-f9ce510510ae
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
