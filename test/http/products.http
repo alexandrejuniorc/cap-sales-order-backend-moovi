@@ -1,0 +1,42 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Products
+# @name Products_GET
+GET {{server}}/odata/v4/main/Products
+Authorization: Basic {{username}}:{{password}}
+
+
+### Products
+# @name Products_POST
+POST {{server}}/odata/v4/main/Products
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "id": "17561003-b59b-4c40-8582-4d88a3b94b23",
+  "name": "name-17561003",
+  "price": 8458460165563.65
+}
+
+
+### Products
+# @name Products_PATCH
+PATCH {{server}}/odata/v4/main/Products/17561003-b59b-4c40-8582-4d88a3b94b23
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "id": "17561003-b59b-4c40-8582-4d88a3b94b23",
+  "name": "name-17561003",
+  "price": 8458460165563.65
+}
+
+
+### Products
+# @name Products_DELETE
+DELETE {{server}}/odata/v4/main/Products/17561003-b59b-4c40-8582-4d88a3b94b23
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}

@@ -16,23 +16,49 @@ Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "id": "28912129-d311-4bfa-a2e8-f9ce510510ae"
+  "id": "3001818b-0af8-4182-90cf-28e32475d804",
+  "totalAmount": 8210507430047.2,
+  "items": [
+    {
+      "id": "8745944c-5620-4a45-8253-c30803fe2b77",
+      "quantity": 34,
+      "price": 392129841124.5
+    },
+    {
+      "id": "8745945e-82aa-4b6a-a33a-ebe9cc4cb87f",
+      "quantity": 97,
+      "price": 3851053570333.84
+    }
+  ]
 }
 
 
 ### SalesOrderHeaders
 # @name SalesOrderHeaders_PATCH
-PATCH {{server}}/odata/v4/main/SalesOrderHeaders/28912129-d311-4bfa-a2e8-f9ce510510ae
+PATCH {{server}}/odata/v4/main/SalesOrderHeaders/3001818b-0af8-4182-90cf-28e32475d804
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "id": "28912129-d311-4bfa-a2e8-f9ce510510ae"
+  "id": "3001818b-0af8-4182-90cf-28e32475d804",
+  "totalAmount": 8210507430047.2,
+  "items": [
+    {
+      "id": "8745944c-5620-4a45-8253-c30803fe2b77",
+      "quantity": 34,
+      "price": 392129841124.5
+    },
+    {
+      "id": "8745945e-82aa-4b6a-a33a-ebe9cc4cb87f",
+      "quantity": 97,
+      "price": 3851053570333.84
+    }
+  ]
 }
 
 
 ### SalesOrderHeaders
 # @name SalesOrderHeaders_DELETE
-DELETE {{server}}/odata/v4/main/SalesOrderHeaders/28912129-d311-4bfa-a2e8-f9ce510510ae
+DELETE {{server}}/odata/v4/main/SalesOrderHeaders/3001818b-0af8-4182-90cf-28e32475d804
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}

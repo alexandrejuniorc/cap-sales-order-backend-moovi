@@ -1,0 +1,44 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Customers
+# @name Customers_GET
+GET {{server}}/odata/v4/main/Customers
+Authorization: Basic {{username}}:{{password}}
+
+
+### Customers
+# @name Customers_POST
+POST {{server}}/odata/v4/main/Customers
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "id": "65529087-24b4-4f2f-a9cf-c7025b4d3c5b",
+  "firstName": "firstName-6552908",
+  "lastName": "lastName-6552908",
+  "email": "email-6552908"
+}
+
+
+### Customers
+# @name Customers_PATCH
+PATCH {{server}}/odata/v4/main/Customers/65529087-24b4-4f2f-a9cf-c7025b4d3c5b
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "id": "65529087-24b4-4f2f-a9cf-c7025b4d3c5b",
+  "firstName": "firstName-6552908",
+  "lastName": "lastName-6552908",
+  "email": "email-6552908"
+}
+
+
+### Customers
+# @name Customers_DELETE
+DELETE {{server}}/odata/v4/main/Customers/65529087-24b4-4f2f-a9cf-c7025b4d3c5b
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
