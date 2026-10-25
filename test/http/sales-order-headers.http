@@ -1,11 +1,23 @@
 @server=http://localhost:4004
 @username=alice
 @password=
+@sales_order_id=3001818b-0af8-4182-90cf-28e32475d804
+# from customer.http
+@customer_id=25954468-7994-4a88-ae6b-277c2fa6e3c2
+# from products.http
+@product_id1=13039184-2ab1-4ba9-b7f4-e727f4ba8423
+@product_id2=13039185-ffa7-4b00-a175-5fcdd2b54938
 
 
 ### SalesOrderHeaders
 # @name SalesOrderHeaders_GET
 GET {{server}}/odata/v4/main/SalesOrderHeaders
+Authorization: Basic {{username}}:{{password}}
+
+
+### SalesOrderHeaders
+# @name SalesOrderHeaders_GET_FILTERED_WITH_EXPAND
+GET {{server}}/odata/v4/main/SalesOrderHeaders?$filter=id eq {{sales_order_id}}&$expand=items
 Authorization: Basic {{username}}:{{password}}
 
 
@@ -16,18 +28,21 @@ Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "id": "3001818b-0af8-4182-90cf-28e32475d804",
+  "id": "{{sales_order_id}}",
   "totalAmount": 8210507430047.2,
+  "customer_id": "{{customer_id}}",
   "items": [
     {
       "id": "8745944c-5620-4a45-8253-c30803fe2b77",
       "quantity": 34,
-      "price": 392129841124.5
+      "price": 392129841124.5,
+      "product_id": "{{product_id1}}"
     },
     {
       "id": "8745945e-82aa-4b6a-a33a-ebe9cc4cb87f",
       "quantity": 97,
-      "price": 3851053570333.84
+      "price": 3851053570333.84,
+      "product_id": "{{product_id2}}"
     }
   ]
 }
@@ -35,23 +50,26 @@ Authorization: Basic {{username}}:{{password}}
 
 ### SalesOrderHeaders
 # @name SalesOrderHeaders_PATCH
-PATCH {{server}}/odata/v4/main/SalesOrderHeaders/3001818b-0af8-4182-90cf-28e32475d804
+PATCH {{server}}/odata/v4/main/SalesOrderHeaders/{{sales_order_id}}
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "id": "3001818b-0af8-4182-90cf-28e32475d804",
+  "id": "{{sales_order_id}}",
   "totalAmount": 8210507430047.2,
+  "customer_id": "{{customer_id}}",
   "items": [
     {
       "id": "8745944c-5620-4a45-8253-c30803fe2b77",
       "quantity": 34,
-      "price": 392129841124.5
+      "price": 392129841124.5,
+      "product_id": "{{product_id1}}"
     },
     {
       "id": "8745945e-82aa-4b6a-a33a-ebe9cc4cb87f",
       "quantity": 97,
-      "price": 3851053570333.84
+      "price": 3851053570333.84,
+       "product_id": "{{product_id2}}"
     }
   ]
 }
@@ -59,6 +77,6 @@ Authorization: Basic {{username}}:{{password}}
 
 ### SalesOrderHeaders
 # @name SalesOrderHeaders_DELETE
-DELETE {{server}}/odata/v4/main/SalesOrderHeaders/3001818b-0af8-4182-90cf-28e32475d804
+DELETE {{server}}/odata/v4/main/SalesOrderHeaders/{{sales_order_id}}
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
