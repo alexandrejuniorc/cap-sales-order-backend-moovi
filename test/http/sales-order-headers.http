@@ -80,3 +80,17 @@ Authorization: Basic {{username}}:{{password}}
 DELETE {{server}}/odata/v4/main/SalesOrderHeaders/{{sales_order_id}}
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
+
+
+### SalesOrderHeaders
+# @name SalesOrderHeaders_Greater_Than_Or_Equal
+GET {{server}}/odata/v4/main/SalesOrderHeaders?$filter=totalAmount ge 200000
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### SalesOrderHeaders
+# @name SalesOrderHeaders_Less_Than_Or_Equal
+GET {{server}}/odata/v4/main/SalesOrderHeaders?$filter=totalAmount le 200000
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}

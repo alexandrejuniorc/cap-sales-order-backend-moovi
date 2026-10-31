@@ -42,3 +42,10 @@ Authorization: Basic {{username}}:{{password}}
 DELETE {{server}}/odata/v4/main/Customers/65529087-24b4-4f2f-a9cf-c7025b4d3c5b
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
+
+
+### Customers
+# @name Customers_Ends_With
+GET {{server}}/odata/v4/main/Customers?$filter=endswith(firstName, '-25954468') and email ne 'email-25954468'
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
