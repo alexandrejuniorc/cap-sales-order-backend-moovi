@@ -56,3 +56,10 @@ Authorization: Basic {{username}}:{{password}}
 GET {{server}}/odata/v4/main/Customers?$search=630478
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
+
+
+### Customers
+# @name Customers_OrderBy
+GET {{server}}/odata/v4/main/Customers?$orderby=firstName desc
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
