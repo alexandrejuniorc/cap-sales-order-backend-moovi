@@ -49,3 +49,10 @@ Authorization: Basic {{username}}:{{password}}
 GET {{server}}/odata/v4/main/Customers?$filter=endswith(firstName, '-25954468') and email ne 'email-25954468'
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
+
+
+### Customers
+# @name Customers_Search
+GET {{server}}/odata/v4/main/Customers?$search=630478
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
