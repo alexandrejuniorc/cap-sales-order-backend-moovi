@@ -108,3 +108,17 @@ Authorization: Basic {{username}}:{{password}}
 GET {{server}}/odata/v4/main/SalesOrderHeaders?$select=customer&$expand=customer($select=email)
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
+
+
+### SalesOrderHeaders
+# @name SalesOrderHeaders_Count
+GET {{server}}/odata/v4/main/SalesOrderHeaders/$count
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### SalesOrderHeaders
+# @name SalesOrderHeaders_Pagination
+GET {{server}}/odata/v4/main/SalesOrderHeaders?$skip=0&$top=5
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
