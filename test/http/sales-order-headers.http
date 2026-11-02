@@ -94,3 +94,9 @@ Authorization: Basic {{username}}:{{password}}
 GET {{server}}/odata/v4/main/SalesOrderHeaders?$filter=totalAmount le 200000
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
+
+### SalesOrderHeaders
+# @name SalesOrderHeaders_Expanding_And_Filtering
+GET {{server}}/odata/v4/main/SalesOrderHeaders?$filter=totalAmount ge 200000&$expand=items($expand=product;$filter=quantity le 13),customer
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
