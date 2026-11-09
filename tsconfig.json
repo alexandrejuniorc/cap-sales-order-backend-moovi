@@ -44,7 +44,12 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "paths": {
+      "@/*": ["*"],
+      "@models/*": ["./@cds-models/*/index.ts"],
+      "@db/*": ["./db/*"]
+    }
   },
   "include": ["srv"],
   "exclude": ["node_modules"]

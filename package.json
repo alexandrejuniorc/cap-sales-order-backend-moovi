@@ -17,7 +17,8 @@
   "scripts": {
     "start": "cds-serve",
     "dev": "cds-tsx watch",
-    "debug": "DEBUG=db cds-tsx watch"
+    "debug": "DEBUG=db cds-tsx watch",
+    "type-cds": "npx @cap-js/cds-typer srv"
   },
   "private": true
 }
