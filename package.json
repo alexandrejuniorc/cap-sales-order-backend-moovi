@@ -2,6 +2,9 @@
   "name": "sales-order-backend",
   "version": "1.0.0",
   "type": "module",
+  "imports": {
+    "#cds-models/*": "./@cds-models/*/index.js"
+  },
   "dependencies": {
     "@sap/cds": "^10"
   },
