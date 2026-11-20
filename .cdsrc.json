@@ -2,7 +2,7 @@
   "[development]": {
     "requires": {
       "db": {
-        "credentials": { "database": ":memory:" },
+        "credentials": { "url": ":memory:" },
         "kind": "sqlite"
       }
     }
