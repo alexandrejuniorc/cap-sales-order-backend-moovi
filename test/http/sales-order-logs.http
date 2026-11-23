@@ -1,0 +1,50 @@
+@server=http://localhost:4004
+@username=ale
+@password=1234
+
+
+### SalesOrderLogs
+# @name SalesOrderLogs_GET
+GET {{server}}/odata/v4/main/SalesOrderLogs
+Authorization: Basic {{username}}:{{password}}
+
+
+### SalesOrderLogs
+# @name SalesOrderLogs_POST
+POST {{server}}/odata/v4/main/SalesOrderLogs
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "id": "36100e56-202c-4d3c-90cd-316d52bbeff9",
+  "userData": "userData-36100",
+  "orderData": "orderData-36100",
+  "createdAt": "2022-08-24T02:00:00.000Z",
+  "createdBy": "createdBy.rus@example.org",
+  "modifiedAt": "2002-02-19T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.rus@example.com"
+}
+
+
+### SalesOrderLogs
+# @name SalesOrderLogs_PATCH
+PATCH {{server}}/odata/v4/main/SalesOrderLogs/36100e56-202c-4d3c-90cd-316d52bbeff9
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "id": "36100e56-202c-4d3c-90cd-316d52bbeff9",
+  "userData": "userData-36100",
+  "orderData": "orderData-36100",
+  "createdAt": "2022-08-24T02:00:00.000Z",
+  "createdBy": "createdBy.rus@example.org",
+  "modifiedAt": "2002-02-19T02:00:00.000Z",
+  "modifiedBy": "modifiedBy.rus@example.com"
+}
+
+
+### SalesOrderLogs
+# @name SalesOrderLogs_DELETE
+DELETE {{server}}/odata/v4/main/SalesOrderLogs/36100e56-202c-4d3c-90cd-316d52bbeff9
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}

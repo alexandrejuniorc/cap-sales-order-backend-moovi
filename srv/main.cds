@@ -40,4 +40,13 @@ service MainService {
         to   : 'admin'
     }]
     entity Products          as projection on sales.Products;
+
+    @restrict: [{
+        grant: ['READ'],
+        to   : [
+            'admin',
+            'developer'
+        ]
+    }]
+    entity SalesOrderLogs    as projection on sales.SalesOrderLogs;
 }

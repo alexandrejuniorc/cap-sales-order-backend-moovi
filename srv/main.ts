@@ -7,6 +7,7 @@ import {
   type SalesOrderItem,
   type SalesOrderItems,
 } from "#cds-models/sales";
+import { randomUUID } from "node:crypto";
 
 export default (srv: Service) => {
   srv.before("READ", "*", (req: Request) => {
@@ -112,6 +113,19 @@ export default (srv: Service) => {
           .where({ id: salesOrderItem.product_id })
           .with({ stock: { "-=": salesOrderItem.quantity } });
       }
+
+      const salesOrderHeaderAsString = JSON.stringify(salesOrderHeader);
+      const userWithoutSensitiveData = { id: request.user.id, roles: request.user.roles, attr: request.user.attr };
+      const userAsString = JSON.stringify(userWithoutSensitiveData);
+      const log = [
+        {
+          header_id: salesOrderHeader.id,
+          userData: userAsString,
+          orderData: salesOrderHeaderAsString,
+        },
+      ];
+
+      await cds.create("sales.SalesOrderLogs").entries(log);
     }
   });
 };
