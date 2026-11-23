@@ -4,6 +4,27 @@
       "db": {
         "credentials": { "url": ":memory:" },
         "kind": "sqlite"
+      },
+      "auth": {
+        "kind": "basic",
+        "users": {
+          "ale": {
+            "password": "1234",
+            "roles": ["admin"],
+            "attr": {
+              "id": "1",
+              "groups": "grupo1"
+            }
+          },
+          "john": {
+            "password": "1234",
+            "roles": ["user"],
+            "attr": {
+              "id": "2",
+              "groups": "grupo2"
+            }
+          }
+        }
       }
     }
   },
