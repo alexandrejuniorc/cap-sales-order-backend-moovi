@@ -34,14 +34,14 @@ Authorization: Basic {{username}}:{{password}}
   "items": [
     {
       "id": "{{$guid}}",
-      "quantity": 2,
-      "price": 20.50,
+      "quantity": 10,
+      "price": 2.99,
       "product_id": "{{product_id1}}"
     },
     {
       "id": "{{$guid}}",
-      "quantity": 3,
-      "price": 39.99,
+      "quantity": 5,
+      "price": 1.99,
       "product_id": "{{product_id2}}"
     }
   ]

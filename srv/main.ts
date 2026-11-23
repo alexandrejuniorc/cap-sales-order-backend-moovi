@@ -90,6 +90,13 @@ export default (srv: Service) => {
       totalAmount += (item.price as number) * (item.quantity as number);
     });
 
+    const IS_BETTER_THAN_30_THOUSAND = totalAmount > 30000;
+
+    if (IS_BETTER_THAN_30_THOUSAND) {
+      const discount = totalAmount * (10 / 100);
+      totalAmount -= discount;
+    }
+
     req.data.totalAmount = totalAmount;
   });
 
