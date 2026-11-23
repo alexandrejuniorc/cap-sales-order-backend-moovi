@@ -9,6 +9,23 @@ import {
 } from "#cds-models/sales";
 
 export default (srv: Service) => {
+  srv.before("READ", "*", (req: Request) => {
+    const isUser = req.user.is("user");
+    const isAdmin = req.user.is("admin");
+
+    if (!isUser && !isAdmin) {
+      req.reject(403, "Access denied: You do not have permission to read this data.");
+    }
+  });
+
+  srv.before(["WRITE", "UPDATE", "DELETE"], "*", (req: Request) => {
+    const isAdmin = req.user.is("admin");
+
+    if (!isAdmin) {
+      req.reject(403, "Access denied: You do not have permission to modify this data.");
+    }
+  });
+
   srv.after("READ", "SalesOrderHeaders", (results: Customers) => {
     results.forEach((customer) => {
       if (!customer.email?.includes("@")) {
@@ -66,6 +83,7 @@ export default (srv: Service) => {
       }
     }
   });
+
   srv.after("CREATE", "SalesOrderHeaders", async (results: SalesOrderHeaders, request: Request) => {
     const salesOrderHeaders = Array.isArray(request.data) ? request.data : ([request.data] as SalesOrderHeaders);
 

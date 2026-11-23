@@ -1,6 +1,6 @@
 @server=http://localhost:4004
-@username=alice
-@password=
+@username=ale
+@password=1234
 @sales_order_id=3001818b-0af8-4182-90cf-28e32475d804
 # from customer.http
 @customer_id=25954468-7994-4a88-ae6b-277c2fa6e3c2

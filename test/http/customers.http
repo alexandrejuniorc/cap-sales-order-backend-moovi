@@ -1,6 +1,6 @@
 @server=http://localhost:4004
-@username=alice
-@password=
+@username=ale
+@password=1234
 
 
 ### Customers
