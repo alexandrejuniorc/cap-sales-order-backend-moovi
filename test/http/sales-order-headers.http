@@ -1,7 +1,7 @@
 @server=http://localhost:4004
 @username=ale
 @password=1234
-@sales_order_id=3001818b-0af8-4182-90cf-28e32475d804
+@sales_order_id={{$guid}}
 # from customer.http
 @customer_id=25954468-7994-4a88-ae6b-277c2fa6e3c2
 # from products.http
@@ -28,20 +28,20 @@ Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "id": "{{sales_order_id}}",
+  "id": "{{$guid}}",
   "totalAmount": 8210507430047.2,
   "customer_id": "{{customer_id}}",
   "items": [
     {
-      "id": "8745944c-5620-4a45-8253-c30803fe2b77",
-      "quantity": 34,
-      "price": 392129841124.5,
+      "id": "{{$guid}}",
+      "quantity": 2,
+      "price": 20.50,
       "product_id": "{{product_id1}}"
     },
     {
-      "id": "8745945e-82aa-4b6a-a33a-ebe9cc4cb87f",
-      "quantity": 97,
-      "price": 3851053570333.84,
+      "id": "{{$guid}}",
+      "quantity": 3,
+      "price": 39.99,
       "product_id": "{{product_id2}}"
     }
   ]
