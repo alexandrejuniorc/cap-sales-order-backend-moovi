@@ -38,6 +38,7 @@ export default (srv: Service) => {
     const { customer_id, items } = req.data as {
       customer_id: string;
       items: SalesOrderItem[];
+      totalAmount: number;
     };
 
     if (!customer_id) {
@@ -82,6 +83,14 @@ export default (srv: Service) => {
         );
       }
     }
+
+    let totalAmount = 0;
+
+    items.forEach((item: SalesOrderItem) => {
+      totalAmount += (item.price as number) * (item.quantity as number);
+    });
+
+    req.data.totalAmount = totalAmount;
   });
 
   srv.after("CREATE", "SalesOrderHeaders", async (results: SalesOrderHeaders, request: Request) => {
