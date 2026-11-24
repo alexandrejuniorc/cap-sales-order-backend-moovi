@@ -8,6 +8,8 @@ import {
   type SalesOrderItems,
 } from "#cds-models/sales";
 import { randomUUID } from "node:crypto";
+import { CustomerService } from "./services/customer/implementation.js";
+import { customerController } from "./factories/controllers/customer.js";
 
 export default (srv: Service) => {
   srv.before("READ", "*", (req: Request) => {
@@ -27,12 +29,8 @@ export default (srv: Service) => {
     }
   });
 
-  srv.after("READ", "SalesOrderHeaders", (results: Customers) => {
-    results.forEach((customer) => {
-      if (!customer.email?.includes("@")) {
-        customer.email = `${customer.email}@nãoexiste.com`;
-      }
-    });
+  srv.after("READ", "Customers", (results: Customers, request: Request) => {
+    request.results = customerController.afterRead(results);
   });
 
   srv.before("CREATE", "SalesOrderHeaders", async (req: Request) => {
